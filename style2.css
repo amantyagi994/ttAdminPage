@@ -1,0 +1,328 @@
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #eeeeee;
+  --bg-ternary: #dddddd;
+  --paragraph: #aaaaaa;
+  --purp1: #7912ce;
+  --btn-txt: #fffffe;
+  --button: #7746ea;
+  --montserrat: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0 5px;
+  overflow-x: auto;
+  background: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: sans-serif;
+}
+
+nav .navWrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 55px;
+  /* border-radius: 0 0 10px 10px; */
+  box-shadow: 0 1px 3px #838383aa;
+  z-index: 10;
+  background: #ffffff;
+}
+
+nav .navWrapper img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+nav .navWrapper .logoWrapper {
+  height: inherit;
+  width: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 20px;
+}
+
+nav .navWrapper .logoWrapper .logoText {
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.mainContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.sideBar {
+  position: relative;
+  height: initial;
+  /* height: calc(100vh - 60px); */
+  width: 175px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+  z-index: 5;
+  background: #efefef;
+}
+
+.sideBar .category {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 1px 0;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border-radius: 0 50px 50px 0;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.sideBar .category p {
+  padding-left: 10px;
+}
+
+.sideBar .category:hover {
+  background: #cdcdcd;
+}
+.sideBar .category svg path,
+mask {
+  /* fill: rgb(68, 0, 255); */
+}
+
+@media only screen and (max-width: 768px) {
+  .mainContainer {
+    position: relative;
+  }
+
+  .sideBar {
+    position: absolute;
+    transform: translateX(-110%);
+    transition: transform 0.5s ease;
+  }
+}
+
+.main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdownContainer {
+  height: 200px;
+  width: 700px;
+  margin: 50px 0;
+  background: #dedede;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dropdown {
+  height: 50px;
+  background: #ffffff;
+  width: 300px;
+}
+
+.dropdown ul {
+  height: 100%;
+  width: 100%;
+  list-style-type: none;
+  background: #ffffff;
+}
+
+.dropdown select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background-color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .dropdownContainer {
+    height: 250px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dropdown {
+    width: 200px;
+    margin: 5px;
+  }
+}
+.timetable-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-primary);
+  margin: 0 0 0.25rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+table.responsive-table {
+  margin: 0.5rem 0 0 0;
+  height: 500px;
+  width: 100%;
+  border-spacing: 0;
+  display: table;
+  border: 1px solid var(--bg-secondary);
+  border-spacing: 0;
+  color: black;
+}
+
+table.responsive-table thead {
+  height: auto;
+}
+
+table.responsive-table thead th {
+  height: 60px;
+  cursor: context-menu;
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--bg-secondary);
+}
+
+table.responsive-table tbody .subjects {
+  margin: 0;
+  height: 3rem;
+  width: auto;
+  cursor: pointer;
+  background-color: var(--bg-ternary);
+}
+
+table.responsive-table tbody .subjects:nth-child(even) {
+  background-color: var(--bg-secondary);
+}
+
+table.responsive-table tbody .subjects td {
+  text-align: center;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  border: 1px solid transparent;
+}
+
+table.responsive-table tbody .subjects td:hover {
+  background: var(--bg-primary);
+  border: 1px solid var(--purp1);
+}
+
+table.responsive-table tbody::-webkit-scrollbar {
+  height: 0;
+}
+
+@media only screen and (max-width: 1080px) {
+  .timetable-container {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  table.responsive-table {
+    height: 500px;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    overflow: auto;
+  }
+  table.responsive-table th,
+  table.responsive-table td {
+    padding: 0;
+    vertical-align: top;
+  }
+  table.responsive-table thead {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    float: left;
+    border: 2px solid var(--paragraph);
+  }
+  table.responsive-table thead tr {
+    display: inline-block;
+  }
+  table.responsive-table thead th {
+    display: block;
+    line-height: 60px;
+  }
+  table.responsive-table tbody {
+    display: block;
+    height: 360px;
+    width: auto;
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  table.responsive-table tbody .subjects {
+    display: inline-block;
+    height: 100%;
+  }
+  table.responsive-table td {
+    display: block;
+    height: 60px;
+    text-align: center;
+    padding: 0 5px 0 5px;
+    line-height: 60px;
+  }
+}
