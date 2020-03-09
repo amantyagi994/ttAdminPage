@@ -60,6 +60,85 @@ nav .navWrapper .logoWrapper .logoText {
   text-transform: uppercase;
 }
 
+.ham-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.toggle-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+.ham-wrapper .hamburger-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ham-wrapper .hamburger-menu > div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.ham-wrapper .hamburger-menu > div::before,
+.ham-wrapper .hamburger-menu > div::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background-color: inherit;
+}
+
+.ham-wrapper .hamburger-menu > div::after {
+  top: 10px;
+}
+
+.ham-wrapper .toggle-menu:checked + .hamburger-menu > div {
+  transform: rotate(135deg);
+}
+
+.ham-wrapper .toggle-menu:checked + .hamburger-menu > div::before,
+.ham-wrapper .toggle-menu:checked + .hamburger-menu > div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.ham-wrapper .toggle-menu:checked:hover + .hamburger-menu > div {
+  transform: rotate(315deg);
+}
+
+.ham-wrapper .toggle-menu:checked ~ .menu {
+  visibility: visible;
+}
+
+.ham-wrapper .toggle-menu:checked ~ .menu > div {
+  transform: translateX(0);
+}
+
 .mainContainer {
   position: relative;
   height: 100%;
@@ -77,6 +156,7 @@ nav .navWrapper .logoWrapper .logoText {
   padding-top: 5px;
   z-index: 5;
   background: #efefef;
+  box-shadow: 2px 2px 3px #838383aa;
 }
 
 .sideBar .category {
@@ -99,10 +179,6 @@ nav .navWrapper .logoWrapper .logoText {
 
 .sideBar .category:hover {
   background: #cdcdcd;
-}
-.sideBar .category svg path,
-mask {
-  /* fill: rgb(68, 0, 255); */
 }
 
 @media only screen and (max-width: 768px) {
@@ -130,12 +206,13 @@ mask {
 .dropdownContainer {
   height: 200px;
   width: 700px;
-  margin: 50px 0;
-  background: #dedede;
+  margin: 50px auto;
+  background: #efefef;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  box-shadow: 2px 2px 3px #838383aa;
 }
 
 .dropdown {
@@ -156,6 +233,13 @@ mask {
   width: 100%;
   outline: none;
   background-color: #ffffff;
+}
+
+.input {
+  padding: 10px;
+  width: 300px;
+  height: 50px;
+  outline: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -179,10 +263,19 @@ mask {
     width: 200px;
     margin: 5px;
   }
+
+  .input {
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    outline: none;
+    margin: 5px;
+  }
 }
+
 .timetable-container {
   position: relative;
-  width: 100%;
+  width: 1000px;
   height: 100vh;
   background-color: var(--bg-primary);
   margin: 0 0 0.25rem 0;
@@ -203,6 +296,7 @@ table.responsive-table {
   border: 1px solid var(--bg-secondary);
   border-spacing: 0;
   color: black;
+  box-shadow: 2px 2px 3px #838383aa;
 }
 
 table.responsive-table thead {
