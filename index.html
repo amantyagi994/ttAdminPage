@@ -150,40 +150,40 @@
       </div>
 
       <!-- Main Panel below -->
-
-      <div class="main">
-        <div class="dropdownContainer">
-          <div class="dropdown">
-            <select name="Class" id="classLabel">
-              <option value="BCA">B.C.A.</option>
-              <option value="MCA">M.C.A.</option>
-              <option value="BTech">B.Tech</option>
-              <option value="MTech">M.Tech</option>
-              <option value="BBA">B.B.A.</option>
-              <option value="MBA">M.B.A</option>
-            </select>
-          </div>
-          <div class="dropdown">
-            <select name="Class" id="teacherLabel">
-              <option value="teacher name">teacher name</option>
-              <option value="teacher name">teacher name</option>
-              <option value="teacher name">teacher name</option>
-              <option value="teacher name">teacher name</option>
-              <option value="teacher name">teacher name</option>
-              <option value="teacher name">teacher name</option>
-            </select>
-          </div>
-          <div class="dropdown">
-            <select name="Class" id="subjectLabel">
-              <option value="Subject name">Subject name</option>
-              <option value="Subject name">Subject name</option>
-              <option value="Subject name">Subject name</option>
-              <option value="Subject name">Subject name</option>
-              <option value="Subject name">Subject name</option>
-              <option value="Subject name">Subject name</option>
-            </select>
-          </div>
-          <!-- <div class="dropdown">
+      <div class="mainWrapper">
+        <div class="main">
+          <div class="dropdownContainer">
+            <div class="dropdown">
+              <select name="Class" id="classLabel">
+                <option value="BCA">B.C.A.</option>
+                <option value="MCA">M.C.A.</option>
+                <option value="BTech">B.Tech</option>
+                <option value="MTech">M.Tech</option>
+                <option value="BBA">B.B.A.</option>
+                <option value="MBA">M.B.A</option>
+              </select>
+            </div>
+            <div class="dropdown">
+              <select name="Class" id="teacherLabel">
+                <option value="teacher name">teacher name</option>
+                <option value="teacher name">teacher name</option>
+                <option value="teacher name">teacher name</option>
+                <option value="teacher name">teacher name</option>
+                <option value="teacher name">teacher name</option>
+                <option value="teacher name">teacher name</option>
+              </select>
+            </div>
+            <div class="dropdown">
+              <select name="Class" id="subjectLabel">
+                <option value="Subject name">Subject name</option>
+                <option value="Subject name">Subject name</option>
+                <option value="Subject name">Subject name</option>
+                <option value="Subject name">Subject name</option>
+                <option value="Subject name">Subject name</option>
+                <option value="Subject name">Subject name</option>
+              </select>
+            </div>
+            <!-- <div class="dropdown">
             <select name="Class" id="dayLabel">
               <option value="select day">select day</option>
               <option value="select day">select day</option>
@@ -193,84 +193,85 @@
               <option value="select day">select day</option>
             </select>
           </div> -->
-          <div class="inputContainer">
-            <input type="text" class="input" placeholder="search" />
+            <div class="inputContainer">
+              <input type="text" class="input" placeholder="search" />
+            </div>
           </div>
+
+          <section class="timetable-container">
+            <table class="responsive-table">
+              <thead>
+                <tr>
+                  <th id="funday">FUNDAY</th>
+                  <th id="monday">MONDAY</th>
+                  <th id="tuesday">TUESDAY</th>
+                  <th id="wednesday">WEDNESDAY</th>
+                  <th id="thursday">THURSDAY</th>
+                  <th id="friday">FRIDAY</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="subjects">
+                  <td id="l1">09:30 - 10:20</td>
+                  <td id="l1d1">Subject Name 1</td>
+                  <td id="l1d2">Subject Name 2</td>
+                  <td id="l1d3">Subject Name 3</td>
+                  <td id="l1d4">Subject Name 4</td>
+                  <td id="l1d5">Subject Name 5</td>
+                </tr>
+
+                <tr class="subjects">
+                  <td id="l2">10:20 - 11:10</td>
+                  <td id="l2d1">Subject Name</td>
+                  <td id="l2d2">Subject Name</td>
+                  <td id="l2d3">Subject Name</td>
+                  <td id="l2d4">Subject Name</td>
+                  <td id="l2d5">Subject Name</td>
+                </tr>
+                <tr class="subjects">
+                  <td id="l3">11:10 - 12:00</td>
+                  <td id="l3d1">Subject Name</td>
+                  <td id="l3d2">Subject Name</td>
+                  <td id="l3d3">Subject Name</td>
+                  <td id="l3d4">Subject Name</td>
+                  <td id="l3d5">Subject Name</td>
+                </tr>
+                <tr class="subjects">
+                  <td id="l4">12:00 - 12:50</td>
+                  <td id="l4d1">Subject Name</td>
+                  <td id="l4d2">Subject Name</td>
+                  <td id="l4d3">Subject Name</td>
+                  <td id="l4d4">Subject Name</td>
+                  <td id="l4d5">Subject Name</td>
+                </tr>
+                <tr class="subjects">
+                  <td id="l5">12:50 - 01:40</td>
+                  <td id="l5d1">Subject Name</td>
+                  <td id="l5d2">Subject Name</td>
+                  <td id="l5d3">Subject Name</td>
+                  <td id="l5d4">Subject Name</td>
+                  <td id="l5d5">Subject Name</td>
+                </tr>
+                <tr class="subjects">
+                  <td id="l6">01:40 - 02:30</td>
+                  <td id="l6d1">Subject Name</td>
+                  <td id="l6d2">Subject Name</td>
+                  <td id="l6d3">Subject Name</td>
+                  <td id="l6d4">Subject Name</td>
+                  <td id="l6d5">Subject Name</td>
+                </tr>
+                <tr class="subjects">
+                  <td id="l7">02:30 - 03:20</td>
+                  <td id="l7d1">Subject Name</td>
+                  <td id="l7d2">Subject Name</td>
+                  <td id="l7d3">Subject Name</td>
+                  <td id="l7d4">Subject Name</td>
+                  <td id="l7d5">Subject Name</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
         </div>
-
-        <section class="timetable-container">
-          <table class="responsive-table">
-            <thead>
-              <tr>
-                <th id="funday">FUNDAY</th>
-                <th id="monday">MONDAY</th>
-                <th id="tuesday">TUESDAY</th>
-                <th id="wednesday">WEDNESDAY</th>
-                <th id="thursday">THURSDAY</th>
-                <th id="friday">FRIDAY</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="subjects">
-                <td id="l1">09:30 - 10:20</td>
-                <td id="l1d1">Subject Name 1</td>
-                <td id="l1d2">Subject Name 2</td>
-                <td id="l1d3">Subject Name 3</td>
-                <td id="l1d4">Subject Name 4</td>
-                <td id="l1d5">Subject Name 5</td>
-              </tr>
-
-              <tr class="subjects">
-                <td id="l2">10:20 - 11:10</td>
-                <td id="l2d1">Subject Name</td>
-                <td id="l2d2">Subject Name</td>
-                <td id="l2d3">Subject Name</td>
-                <td id="l2d4">Subject Name</td>
-                <td id="l2d5">Subject Name</td>
-              </tr>
-              <tr class="subjects">
-                <td id="l3">11:10 - 12:00</td>
-                <td id="l3d1">Subject Name</td>
-                <td id="l3d2">Subject Name</td>
-                <td id="l3d3">Subject Name</td>
-                <td id="l3d4">Subject Name</td>
-                <td id="l3d5">Subject Name</td>
-              </tr>
-              <tr class="subjects">
-                <td id="l4">12:00 - 12:50</td>
-                <td id="l4d1">Subject Name</td>
-                <td id="l4d2">Subject Name</td>
-                <td id="l4d3">Subject Name</td>
-                <td id="l4d4">Subject Name</td>
-                <td id="l4d5">Subject Name</td>
-              </tr>
-              <tr class="subjects">
-                <td id="l5">12:50 - 01:40</td>
-                <td id="l5d1">Subject Name</td>
-                <td id="l5d2">Subject Name</td>
-                <td id="l5d3">Subject Name</td>
-                <td id="l5d4">Subject Name</td>
-                <td id="l5d5">Subject Name</td>
-              </tr>
-              <tr class="subjects">
-                <td id="l6">01:40 - 02:30</td>
-                <td id="l6d1">Subject Name</td>
-                <td id="l6d2">Subject Name</td>
-                <td id="l6d3">Subject Name</td>
-                <td id="l6d4">Subject Name</td>
-                <td id="l6d5">Subject Name</td>
-              </tr>
-              <tr class="subjects">
-                <td id="l7">02:30 - 03:20</td>
-                <td id="l7d1">Subject Name</td>
-                <td id="l7d2">Subject Name</td>
-                <td id="l7d3">Subject Name</td>
-                <td id="l7d4">Subject Name</td>
-                <td id="l7d5">Subject Name</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
       </div>
       <!-- Main Panel Above -->
     </div>

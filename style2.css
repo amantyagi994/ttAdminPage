@@ -211,6 +211,16 @@ nav .navWrapper .logoWrapper .logoText {
   .toggle-menu {
     z-index: 7;
   }
+}
+
+@media only screen and (max-width: 1080px) {
+  .mainContainer {
+    position: relative;
+  }
+
+  .toggle-menu {
+    z-index: 7;
+  }
 
   .hamburger-menu {
     opacity: 1;
@@ -226,10 +236,17 @@ nav .navWrapper .logoWrapper .logoText {
   }
 }
 
+.mainWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+}
+
 .main {
   position: relative;
   height: 100%;
-  width: 100%;
+  width: calc(100vw - 175px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -273,6 +290,18 @@ nav .navWrapper .logoWrapper .logoText {
   width: 300px;
   height: 50px;
   outline: none;
+}
+
+@media only screen and (max-width: 1080px) {
+  .main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  .dropdownContainer {
+    height: 400px;
+    width: 450px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
