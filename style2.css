@@ -28,15 +28,20 @@ body {
   font-family: sans-serif;
 }
 
-nav .navWrapper {
+nav,
+.navWrapper {
   position: sticky;
   top: 0;
   left: 0;
   height: 55px;
-  /* border-radius: 0 0 10px 10px; */
   box-shadow: 0 1px 3px #838383aa;
   z-index: 10;
   background: #ffffff;
+}
+
+nav .navWrapper {
+  display: flex;
+  width: auto;
 }
 
 nav .navWrapper img {
@@ -46,6 +51,8 @@ nav .navWrapper img {
 }
 
 nav .navWrapper .logoWrapper {
+  position: relative;
+  left: 20px;
   height: inherit;
   width: 125px;
   display: flex;
@@ -60,11 +67,22 @@ nav .navWrapper .logoWrapper .logoText {
   text-transform: uppercase;
 }
 
+.mainContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
 .ham-wrapper {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
-  z-index: 1;
+}
+
+.hamburger-menu {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .toggle-menu {
@@ -76,30 +94,33 @@ nav .navWrapper .logoWrapper .logoText {
   width: 50px;
   height: 50px;
   opacity: 0;
+  transition: transform 0.5s ease;
 }
 
 .ham-wrapper .hamburger-menu {
   position: absolute;
-  top: 0;
+  /* top: -2px; */
   left: 0;
   z-index: 1;
-  width: 60px;
-  height: 60px;
-  padding: 1rem;
+  width: 50px;
+  height: 50px;
+  padding: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.5s ease;
 }
 
 .ham-wrapper .hamburger-menu > div {
   position: relative;
   width: 100%;
   height: 2px;
-  background-color: #ffffff;
+  background-color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease;
+  z-index: 1;
 }
 
 .ham-wrapper .hamburger-menu > div::before,
@@ -121,6 +142,14 @@ nav .navWrapper .logoWrapper .logoText {
   transform: rotate(135deg);
 }
 
+.ham-wrapper .toggle-menu:checked + .hamburger-menu {
+  transform: translateX(175px);
+}
+
+.ham-wrapper .toggle-menu:checked {
+  transform: translateX(175px);
+}
+
 .ham-wrapper .toggle-menu:checked + .hamburger-menu > div::before,
 .ham-wrapper .toggle-menu:checked + .hamburger-menu > div::after {
   top: 0;
@@ -131,24 +160,17 @@ nav .navWrapper .logoWrapper .logoText {
   transform: rotate(315deg);
 }
 
-.ham-wrapper .toggle-menu:checked ~ .menu {
+.ham-wrapper .toggle-menu:checked ~ .sideBar {
   visibility: visible;
 }
 
-.ham-wrapper .toggle-menu:checked ~ .menu > div {
+.ham-wrapper .toggle-menu:checked ~ .sideBar {
   transform: translateX(0);
 }
 
-.mainContainer {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-}
-
 .sideBar {
-  position: relative;
-  height: initial;
+  position: fixed;
+  height: 100%;
   /* height: calc(100vh - 60px); */
   width: 175px;
   display: flex;
@@ -186,10 +208,21 @@ nav .navWrapper .logoWrapper .logoText {
     position: relative;
   }
 
+  .toggle-menu {
+    z-index: 7;
+  }
+
+  .hamburger-menu {
+    opacity: 1;
+    visibility: visible;
+    z-index: 6;
+  }
+
   .sideBar {
     position: absolute;
     transform: translateX(-110%);
     transition: transform 0.5s ease;
+    z-index: 4;
   }
 }
 
