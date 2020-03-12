@@ -391,6 +391,10 @@ table.responsive-table tbody .subjects td {
   border: 1px solid transparent;
 }
 
+table.responsive-table tbody .subjects td:first-child {
+  font-weight: bold;
+}
+
 table.responsive-table tbody .subjects td:hover {
   background: var(--bg-primary);
   border: 1px solid var(--purp1);
