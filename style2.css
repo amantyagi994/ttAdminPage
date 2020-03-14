@@ -15,7 +15,6 @@ body {
 }
 
 body {
-  padding: 0 5px;
   overflow-x: auto;
   background: #ffffff;
 }
@@ -25,23 +24,25 @@ body {
   padding: 0;
   box-sizing: border-box;
   border: none;
-  font-family: sans-serif;
+  font-family: var(--montserrat);
 }
 
-nav,
-.navWrapper {
-  position: sticky;
+nav {
+  position: fixed;
   top: 0;
   left: 0;
   height: 55px;
-  box-shadow: 0 1px 3px #838383aa;
+  width: 100%;
+  box-shadow: 0 1px 2px #838383aa;
   z-index: 10;
   background: #ffffff;
 }
 
 nav .navWrapper {
+  height: inherit;
   display: flex;
   width: auto;
+  justify-content: space-between;
 }
 
 nav .navWrapper img {
@@ -62,13 +63,36 @@ nav .navWrapper .logoWrapper {
 }
 
 nav .navWrapper .logoWrapper .logoText {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 900;
   text-transform: uppercase;
 }
 
+.profile {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.logOut {
+  height: auto;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: var(--bg-ternary);
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.logOut:hover {
+  color: var(--purp1);
+  background-color: var(--bg-secondary);
+}
+
 .mainContainer {
   position: relative;
+  top: 55px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -76,35 +100,29 @@ nav .navWrapper .logoWrapper .logoText {
 
 .ham-wrapper {
   position: relative;
-  top: 0;
+  top: 55px;
   left: 0;
-}
-
-.hamburger-menu {
-  opacity: 0;
-  visibility: hidden;
 }
 
 .toggle-menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  /* z-index: 2; */
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   opacity: 0;
-  transition: transform 0.5s ease;
 }
 
 .ham-wrapper .hamburger-menu {
-  position: absolute;
-  /* top: -2px; */
+  position: fixed;
+  top: 0;
   left: 0;
-  z-index: 1;
-  width: 50px;
-  height: 50px;
-  padding: 0.75rem;
+  /* z-index: 1; */
+  width: 55px;
+  height: 55px;
+  padding: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,14 +138,12 @@ nav .navWrapper .logoWrapper .logoText {
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease;
-  z-index: 1;
 }
 
 .ham-wrapper .hamburger-menu > div::before,
 .ham-wrapper .hamburger-menu > div::after {
   content: "";
   position: absolute;
-  z-index: 1;
   top: -10px;
   width: 100%;
   height: 2px;
@@ -142,13 +158,13 @@ nav .navWrapper .logoWrapper .logoText {
   transform: rotate(135deg);
 }
 
-.ham-wrapper .toggle-menu:checked + .hamburger-menu {
+/* .ham-wrapper .toggle-menu:checked + .hamburger-menu {
   transform: translateX(175px);
-}
+} */
 
-.ham-wrapper .toggle-menu:checked {
+/* .ham-wrapper .toggle-menu:checked {
   transform: translateX(175px);
-}
+} */
 
 .ham-wrapper .toggle-menu:checked + .hamburger-menu > div::before,
 .ham-wrapper .toggle-menu:checked + .hamburger-menu > div::after {
@@ -160,9 +176,9 @@ nav .navWrapper .logoWrapper .logoText {
   transform: rotate(315deg);
 }
 
-.ham-wrapper .toggle-menu:checked ~ .sideBar {
+/* .ham-wrapper .toggle-menu:checked ~ .sideBar {
   visibility: visible;
-}
+} */
 
 .ham-wrapper .toggle-menu:checked ~ .sideBar {
   transform: translateX(0);
@@ -170,7 +186,9 @@ nav .navWrapper .logoWrapper .logoText {
 
 .sideBar {
   position: fixed;
-  height: 100%;
+  top: 55px;
+  left: 0;
+  height: 100vh;
   /* height: calc(100vh - 60px); */
   width: 175px;
   display: flex;
@@ -178,7 +196,7 @@ nav .navWrapper .logoWrapper .logoText {
   padding-top: 5px;
   z-index: 5;
   background: #efefef;
-  box-shadow: 2px 2px 3px #838383aa;
+  box-shadow: 1px 1px 3px #838383aa;
 }
 
 .sideBar .category {
@@ -208,8 +226,15 @@ nav .navWrapper .logoWrapper .logoText {
     position: relative;
   }
 
+  .hamburger-menu {
+    position: fixed;
+    opacity: 1;
+    visibility: visible;
+    z-index: 12;
+  }
+
   .toggle-menu {
-    z-index: 7;
+    z-index: 14;
   }
 }
 
@@ -218,21 +243,23 @@ nav .navWrapper .logoWrapper .logoText {
     position: relative;
   }
 
-  .toggle-menu {
-    z-index: 7;
-  }
-
   .hamburger-menu {
     opacity: 1;
+    position: fixed;
     visibility: visible;
-    z-index: 6;
+    z-index: 12;
+  }
+
+  .toggle-menu {
+    z-index: 14;
   }
 
   .sideBar {
-    position: absolute;
+    position: fixed;
+    top: 55px;
     transform: translateX(-110%);
     transition: transform 0.5s ease;
-    z-index: 4;
+    z-index: 5;
   }
 }
 
@@ -257,6 +284,7 @@ nav .navWrapper .logoWrapper .logoText {
   height: 200px;
   width: 700px;
   margin: 50px auto;
+  padding: 5px;
   background: #efefef;
   display: flex;
   flex-wrap: wrap;
@@ -358,7 +386,6 @@ table.responsive-table {
   border: 1px solid var(--bg-secondary);
   border-spacing: 0;
   color: black;
-  box-shadow: 2px 2px 3px #838383aa;
 }
 
 table.responsive-table thead {
@@ -421,7 +448,7 @@ table.responsive-table tbody::-webkit-scrollbar {
     margin-bottom: 1rem;
   }
   table.responsive-table {
-    height: 500px;
+    height: auto;
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
